@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_solve__problem"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.muhammedd.solution.Solve_Problem">
+
+    <TextView
+        android:id="@+id/desTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="53dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:textSize="18sp" />
+
+
+    <Button
+        android:id="@+id/buttonsolve"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="80dp"
+        android:alpha="0"
+        android:background="@color/colorPrimary"
+        android:text="Submit"
+        android:textColor="#fff" />
+
+    <TextView
+        android:id="@+id/headTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="Problem head"
+        android:textColor="#000"
+        android:textSize="20sp"
+        android:textStyle="normal|bold" />
+
+    <TextView
+        android:id="@+id/userTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/desTxt"
+        android:layout_marginLeft="17dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="108dp"
+        android:text="user"
+        android:textColor="#000"
+        android:textSize="15sp"
+        android:textStyle="normal|bold" />
+
+    <EditText
+        android:id="@+id/input_answer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/userTxt"
+        android:layout_marginTop="39dp"
+        android:alpha="0"
+        android:ems="10"
+        android:hint="Solution"
+        android:inputType="textMultiLine" />
+
+    <TextView
+        android:alpha="0"
+        android:textColor="@color/green1"
+        android:text="Solution"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/solutionword"
+        android:textStyle="normal|bold"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_alignBottom="@+id/input_answer"
+        android:layout_centerHorizontal="true"
+        android:textSize="25dp" />
+
+    <TextView
+        android:alpha="0"
+        android:text="TextView"
+        android:textColor="@color/green2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonsolve"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="11dp"
+        android:id="@+id/soultion_Text"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="18sp"
+        android:textStyle="normal|bold"
+        android:textAlignment="center" />
+
+    <TextView
+        android:alpha="0"
+        android:text="solvedby"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/userTxt"
+        android:layout_alignStart="@+id/userTxt"
+        android:layout_marginBottom="34dp"
+        android:id="@+id/solvedBy"
+        android:textSize="14sp"
+        android:textColor="@android:color/black"
+        android:textStyle="normal|bold" />
+
+
+</RelativeLayout>
