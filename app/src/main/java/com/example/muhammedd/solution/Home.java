@@ -36,34 +36,42 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        arrayList = new ArrayList<Problem>();
-        dbConnector = new DBConnector();
-        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        try {
+
+            arrayList = new ArrayList<Problem>();
+            dbConnector = new DBConnector();
+            recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
             AllQuestions allQuestions = new AllQuestions();
             allQuestions.execute("");
 
-        mAdapter = new ProblemsAdapter(arrayList);
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
-        recyclerView.setLayoutManager(mLayoutManager);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
-        recyclerView.setAdapter(mAdapter);
 
-        recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), recyclerView, new RecyclerTouchListener.ClickListener() {
-            @Override
-            public void onClick(View view, int position) {
-                Problem problem = arrayList.get(position);
-                Intent intent = new Intent(getApplicationContext(),Solve_Problem.class);
-                intent.putExtra("problem",(Serializable) problem);
-                startActivity(intent);
-            }
+            RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
+            recyclerView.setLayoutManager(mLayoutManager);
+            recyclerView.setItemAnimator(new DefaultItemAnimator());
+            recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
+            mAdapter = new ProblemsAdapter(arrayList);
+            recyclerView.setAdapter(mAdapter);
 
-            @Override
-            public void onLongClick(View view, int position) {
 
-            }
-        }));
+            recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), recyclerView, new RecyclerTouchListener.ClickListener() {
+                @Override
+                public void onClick(View view, int position) {
+                    Problem problem = arrayList.get(position);
+                    Intent intent = new Intent(getApplicationContext(), Solve_Problem.class);
+                    intent.putExtra("problem", (Serializable) problem);
+                    startActivity(intent);
+                }
+
+                @Override
+                public void onLongClick(View view, int position) {
+
+                }
+            }));
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
     }
 
@@ -91,7 +99,7 @@ public class Home extends AppCompatActivity {
 
             try {
                 Statement st = con.createStatement();
-                String sql = "SELECT ID, problemHead, problemBody, problemBy, soulution, solvedBy FROM Problems";
+                    String sql = "SELECT ID, problemHead, problemBody, problemBy, soulution, solvedBy FROM Problems";
                 ResultSet rs = st.executeQuery(sql);
                 while (rs.next()) {
                     Problem temp = new Problem();
@@ -105,7 +113,16 @@ public class Home extends AppCompatActivity {
                     arrayList.add(temp);
                 }
 
-                mAdapter.notifyDataSetChanged();
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        mAdapter.notifyDataSetChanged();
+
+                    }
+                });
+
+
 
 
             } catch (SQLException e) {

@@ -15,10 +15,10 @@ import java.sql.SQLException;
 public class DBConnector {
 
     String
-            user = "sa",
-            password = "123456",
-            database = "solutionDB",
-            server = "*************";
+            user = "solutiondb1",
+            password = "Qo4Ot6~4ax~j",
+            database = "solutiondb1",
+            server = "mssql4.gear.host";
 
 
     @SuppressLint("NewApi")

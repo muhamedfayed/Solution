@@ -44,6 +44,7 @@ public class NewQuestion extends AppCompatActivity {
             public void onClick(View v) {
                 NQuestion question = new NQuestion();
                 question.execute("");
+
             }
         });
     }

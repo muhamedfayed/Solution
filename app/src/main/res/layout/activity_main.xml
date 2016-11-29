@@ -1,27 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.muhammedd.solution.MainActivity">
 
+    <TextureView
+        android:id="@+id/textureView"
+        android:layout_width="@dimen/texture_view_width"
+        android:layout_height="@dimen/texture_view_height"
+        android:layout_centerInParent="true"/>
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#a01a1919"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/imageView" />
+
     <EditText
+        android:textColorHint="#acacac"
         android:id="@+id/username_field"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="57dp"
         android:ems="10"
+        android:textColor="#acacac"
         android:hint="Username"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:layout_below="@+id/imageView3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="39dp" />
 
     <EditText
+
+        android:textColorHint="#acacac"
+        android:textColor="#acacac"
         android:id="@+id/password_field"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -33,18 +49,9 @@
         android:hint="password"
         android:inputType="textPassword" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="74dp"
-        android:text="Please sign in"
-        android:textColor="#100d0d"
-        android:textSize="17sp" />
-
     <Button
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:id="@+id/signin_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -56,15 +63,20 @@
         android:textColor="#fff" />
 
     <TextView
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="#d4d4d4"
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/signin_btn"
         android:layout_centerHorizontal="true"
+        android:paddingTop="10dp"
         android:text="Do not have account ?"
-        android:textColor="#000" />
+         />
 
     <Button
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:id="@+id/createaccountBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -74,6 +86,16 @@
         android:background="@color/colorPrimary"
         android:text="Create new account"
         android:textColor="#fff" />
+
+    <ImageView
+        android:layout_width="230dp"
+        android:layout_height="170dp"
+        android:scaleType="fitXY"
+        android:background="@drawable/logoo"
+        android:id="@+id/imageView3"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="33dp" />
 
 
 </RelativeLayout>

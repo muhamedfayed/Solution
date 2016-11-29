@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/Solution.iml" filepath="$PROJECT_DIR$/Solution.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/jtds-1.2.7/jtds-1.2.7.iml" filepath="$PROJECT_DIR$/jtds-1.2.7/jtds-1.2.7.iml" />
+      <module fileurl="file://$PROJECT_DIR$/subProject/video-crop-master/video-crop-master.iml" filepath="$PROJECT_DIR$/subProject/video-crop-master/video-crop-master.iml" />
     </modules>
   </component>
 </project>
